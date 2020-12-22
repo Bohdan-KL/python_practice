@@ -60,7 +60,11 @@ def is_correct_input(reaction, situation, all_funk_list=[]):
                 sig=1
             else:
                 sig=sig.count(',')+1
+        else:
+            sig=0
         try:
+            if sig==0:
+                result = func()
             print('your data is: ', end='')
             data = list(map(float, input().split()))
             if sig == len(data):
